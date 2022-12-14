@@ -25,7 +25,7 @@ const install = async (minikube, inputs) => {
   logExecSync(
     `${sudo(inputs)} ${minikubeDirectory}/minikube start --vm-driver=${driver(
       inputs
-    )} ${containerRuntime} --kubernetes-version ${inputs.kubernetesVersion} ${inputs.startArgs}`
+    )} ${containerRuntime} --kubernetes-version ${inputs.kubernetesVersion} ${inputs.startArgs} --enable-default-cni`
   );
   logExecSync(`sudo chown -R $USER $HOME/.kube ${minikubeDirectory}/.minikube`);
   logExecSync(
